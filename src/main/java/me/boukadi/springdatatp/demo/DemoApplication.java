@@ -11,17 +11,17 @@ import java.util.Date;
 
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner {
+public class DemoApplication {
 
-	@Autowired
-	PatientRepository patientRepository;
+	/*@Autowired
+	PatientRepository patientRepository;*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Override
+	/*@Override
 	public void run(String... args) throws Exception {
 		patientRepository.save(new Patient(null,"salah", new Date(), 242, false));
-	}
+	}*/
 }

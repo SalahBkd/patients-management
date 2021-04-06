@@ -2,6 +2,7 @@ package me.boukadi.springdatatp.demo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="patient")
-@Data @AllArgsConstructor @ToString
+@Data @AllArgsConstructor @ToString @NoArgsConstructor
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +24,4 @@ public class Patient {
     private int score;
     @Column(name = "malade")
     private boolean malade;
-
 }
