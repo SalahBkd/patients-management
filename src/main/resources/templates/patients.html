@@ -8,7 +8,16 @@
 <body>
 <div class="container" style="margin-top: 50px">
     <div class="row">
-        <h2>Liste de Patients</h2>
+        <h2 class="col">Liste de Patients</h2>
+        <br>
+        <form class="row g-3" method="GET" th:action="@{patients}">
+            <div class="col-auto">
+                <input name="keyword" type="text" class="form-control" id="inputPassword2" placeholder="Search Patient" th:value="${keyword}">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Search</button>
+            </div>
+        </form>
         <table class="table">
             <tr>
                 <th>Id</th>
@@ -25,6 +34,12 @@
                 <td th:text="${p.malade}"></td>
             </tr>
         </table>
+        <ul class="nav nav-pills">
+            <li th:each="page, status:${pages}">
+                <a th:class="${status.index == currentPage} ? 'btn btn-primary' : 'btn' "
+                   th:href="@{patients(page=${status.index}, keyword=${keyword})}" th:text="${status.index}"></a>
+            </li>
+        </ul>
     </div>
 </div>
 
