@@ -37,6 +37,12 @@
                     <td th:text="${p.dateNaisssance}"></td>
                     <td th:text="${p.score}"></td>
                     <td th:text="${p.malade}"></td>
+                    <td>
+                        <a class="btn btn-success" th:href="@{updatePatient(id=${p.id})}">Edit</a>
+                    </td>
+                    <td>
+                        <a onclick="return confirm('Confirm Deletion !')" class="btn btn-danger" th:href="@{deletePatient(id=${p.id}, keyword=${keyword}, page=${currentPage}, size=${size})}">Delete</a>
+                    </td>
                 </tr>
             </table>
             <ul class="nav nav-pills">
