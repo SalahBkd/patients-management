@@ -54,10 +54,10 @@ public class PatientController {
     }
 
     @GetMapping(path = "/updatePatient")
-    public String savePatient(Model model, Long id) {
+    public String updatePatient(Model model, Long id) {
         Patient patient = patientRepository.findById(id).get();
         model.addAttribute("patient", patient);
-        return "patients";
+        return "formPatient";
     }
 
     @GetMapping(path = "/deletePatient")
