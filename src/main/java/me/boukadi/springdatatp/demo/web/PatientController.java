@@ -66,4 +66,6 @@ public class PatientController {
         return "redirect:/patients?page=" + page + "&size=" + size + "&keyword=" + keyword;
     }
 
+
+
 }
